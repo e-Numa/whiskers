@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center">SignIn</h1>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">SignIn</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

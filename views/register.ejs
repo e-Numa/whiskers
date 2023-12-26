@@ -1,0 +1,91 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center">SignUp</h1>
+            <form action="/register" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="firstName" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="address" placeholder="Address">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" name="telephoneNumber" placeholder="Telephone Number">
+                </div>
+                <div class="form-group">
+                    <label for="role">Select Role:</label>
+                    <select class="form-control" id="role" name="role">
+                        <option value="Parent">Pet Parent</option>
+                        <option value="Adopter">Adopter</option>
+                        <option value="Purchaser">Pet Purchaser</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="preferredPetType">Preferred Pet Type:</label>
+                    <select class="form-control" id="preferredPetType" name="preferredPetType">
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Parrot">Parrot</option>
+                        <option value="Hamster">Hamster</option>
+                        <option value="Rabbit">Rabbit</option>
+                        <option value="Gold Fish">Gold Fish</option>
+                        <option value="Monkey">Monkey</option>
+                        <option value="Goat">Goat</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <!-- If "Others" is selected, show a text input for custom pet type -->
+                 <!-- If "Others" is selected, show a text input for custom pet type -->
+                 <div id="customPetType" class="form-group" style="display: none;">
+                    <label for="customPetTypeInput">Custom Pet Type:</label>
+                    <input type="text" class="form-control" id="customPetTypeInput" name="customPetTypeInput" placeholder="Enter custom pet type">
+                </div>
+
+                <div class="form-group">
+                    <label for="petExperience">Experience with Pets:</label>
+                    <select class="form-control" id="petExperience" name="petExperience">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Experienced">Experienced</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">SignUp</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        const preferredPetType = $("#preferredPetType");
+        const customPetTypeDiv = $("#customPetType");
+
+        preferredPetType.change(function () {
+            const selectedValue = preferredPetType.val();
+            if (selectedValue === "Others") {
+                customPetTypeDiv.show();
+            } else {
+                customPetTypeDiv.hide();
+            }
+        });
+    });
+</script>

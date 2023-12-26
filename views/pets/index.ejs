@@ -1,0 +1,30 @@
+<%- include ("../partials/header") %>
+
+<div class="container">
+    <header class="jumbotron" id="jumbo">
+        <div class="container text-center">
+            <h1>Welcome to Whiskers</h1>
+            <h3>Explore a world of love, care, and joyful moments with our pet-friendly services</h3>
+            <p>
+                <a href="/pets/new" class="btn btn-lg btn-info">Surrender Pet</a>
+            </p>
+        </div>
+    </header>
+
+    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+        <% pets.forEach(function(pet){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="img-thumbnail nopad">
+                    <img src="<%= pet.imageUrl %>" alt="image" class="img-fluid">
+                    <div class="caption">
+                        <h4><%= pet.name %></h4>
+                    </div>
+                    <p>
+                        <a href="/pets/<%= pet._id %>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<%- include ("../partials/footer") %>
