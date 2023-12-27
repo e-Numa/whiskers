@@ -17,7 +17,7 @@ const petsRoute = require("./routes/pets"),
 
 const port = process.env.PORT || 3000;
 
-mongoose.connect('mongodb+srv://enumauzoegwu:April05@savilock.yfqi4gj.mongodb.net/', {
+mongoose.connect('mongodb+srv://enteryourmongodetailsandpassword.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
